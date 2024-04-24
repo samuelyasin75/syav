@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotações</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body  onload="entrar()">
+    <header>
+        <h1>Anotações</h1>
+    </header>
+
+    <!-- Caixa de entrada da nota -->
+    <section id="entry_note">
+        <div>
+            Titulo:
+            <input type="text" id="titulo_entry">
+        </div> 
+        Anotação:
+        <div>
+           <textarea name="nota" id="nota" cols="30" rows="10"></textarea>
+           
+        </div>
+        <div>
+            <input type="button" value="Salvar" onclick="salvar()">
+            <input type="button" value="Limpar" onclick="limpar()">
+        </div>
+    </section>
+
+    <!-- exibição de notas -->
+    <div id="exb_nota">
+        
+    </div>
+    <script src="anotacao.js"></script>
+</body>
+</html>
