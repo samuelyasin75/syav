@@ -45,3 +45,4 @@ console.log(localStorage.getItem(titulo))
 
 //removendo/excluindo
 localStorage.removeItem('conteudo') */
+
