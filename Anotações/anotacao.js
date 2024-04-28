@@ -1,10 +1,22 @@
 
 function entrar() {
    exb_nota = document.querySelector('#exb_nota')
-   conteudo = JSON.stringify(localStorage.getItem('conteudo'))
+   conteudo = localStorage.getItem('conteudo')
+   backup_notas = {}
    conteudo = JSON.parse(conteudo)
-   backup_notas = {conteudo}
-   exb_nota.innerHTML += conteudo
+   
+   // fazendo backup e exibindo as notas antigas
+   if (conteudo) {
+       console.log(conteudo)
+       
+       backup_notas = conteudo
+
+       for (let title_obj in conteudo) {
+        exb_nota.innerHTML += conteudo[title_obj]
+        }
+    }
+
+   console.log(localStorage.getItem('conteudo'))
 }
 
 function salvar() {
@@ -37,12 +49,11 @@ function limpar() {
 }
 
 
-/*salvando na local
-localStorage.setItem('conteudo', nota)
+//salvando na local
+//localStorage.setItem('conteudo', nota)
     
 //mostrando o valor armazenado, atevés do titulo
-console.log(localStorage.getItem(titulo))
+//console.log(localStorage.getItem(titulo))
 
 //removendo/excluindo
-localStorage.removeItem('conteudo') */
-
+//localStorage.removeItem('conteudo')
