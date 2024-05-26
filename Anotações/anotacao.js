@@ -1,100 +1,100 @@
 //Criando as variaveis
 function entrar() {
-   exb_nota = document.querySelector('#exb_nota')
-   conteudo = localStorage.getItem('conteudo')
-   backup_notas = {}
+   notaExb = document.querySelector('#notaExb')
+   conteudo = localStorage.getItem('localConteudo')
+   notaBackup = {}
    conteudo = JSON.parse(conteudo)
    
    // fazendo backup e exibindo as notas antigas
    if (conteudo) {
-       backup_notas = conteudo
+       notaBackup = conteudo
 
        for (let title_obj in conteudo) {
-        exb_nota.innerHTML += conteudo[title_obj]
+        notaExb.innerHTML += conteudo[title_obj]
         }
     }
 }
 
 function salvar() {
-    let titulo = document.getElementById('titulo_entry').value
-    let nota = document.getElementById('nota').value
+    let notaTitulo = document.getElementById('notaTitulo').value
+    let notaConteudo = document.getElementById('notaConteudo').value
 
         //Verficando se há algum valor nas caixas de entrada
-    if (nota == '' || titulo == '') {
+    if (notaConteudo == '' || notaTitulo == '') {
         alert('[ERRO] Nenhum campo pode ficar vazio')
     } else {
         
         //Colocando as notas em exibição
-        exb_nota.innerHTML +=  `
+        notaExb.innerHTML +=  `
             <div class='notepad'>
                 <div class='titulo'>
-                    ${titulo}
+                    ${notaTitulo}
                     <div class="button">
-                    <button id='${titulo}'>Excluir</button>
+                    <button id='${notaTitulo}'>Excluir</button>
                     </div>
                 </div>
                 <div class='cntd'>
-                    ${nota}
+                    ${notaConteudo}
                 </div>
             </div>
             `
 
         // Salvando no local.Storage
-        backup_notas[titulo] = `
+        notaBackup[notaTitulo] = `
             <div class='notepad'>
                 <div class='titulo'>
-                    ${titulo}
+                    ${notaTitulo}
                     <div class="button">
-                    <button id='${titulo}'>Excluir</button>
+                    <button id='${notaTitulo}'>Excluir</button>
                     </div>
                 </div>
                 <div class='cntd'>
-                    ${nota}
+                    ${notaConteudo}
                 </div>
             </div>
             `
-    localStorage.setItem('conteudo', JSON.stringify(backup_notas))
+    localStorage.setItem('localConteudo', JSON.stringify(notaBackup))
 
     }
 }
 
 // Limpando os campos de titulo e anotação
 function limpar() {
-    let titulo = document.getElementById('titulo_entry')
-    let nota = document.getElementById('nota')
+    let titulo = document.getElementById('notaTitulo')
+    let nota = document.getElementById('notaConteudo')
     
     nota.value = ''
     titulo.value = ''
 }
 
 // Excluindo nota
-exb_nota.addEventListener('click', function(e) {
+notaExb.addEventListener('click', function(propriedades) {
 
     var nota_atualizada = ''
-    var id = e.target.id
+    var id = propriedades.target.id
 
         //deletando nota do objeto
-        delete backup_notas[id]
+        delete notaBackup[id]
 
         //guardando valores do objeto em uma variavel
-        for (let title_obj in backup_notas) {
-            nota_atualizada += backup_notas[title_obj]
+        for (let title_obj in notaBackup) {
+            nota_atualizada += notaBackup[title_obj]
     }
 
     //reexibindo as notas atualizadas
-    exb_nota.innerHTML = nota_atualizada
+    notaExb.innerHTML = nota_atualizada
 
-    localStorage.setItem('conteudo', backup_notas)
+    localStorage.setItem('localConteudo', JSON.stringify(notaBackup))
 
 }
 )
 
 
 //salvando na local
-//localStorage.setItem('conteudo', backup_notas)
+//localStorage.setItem('localConteudo', notaBackup)
     
 //mostrando o valor armazenado, atevés do titulo
 //console.log(localStorage.getItem(titulo))
 
 //removendo/excluindo
-//localStorage.removeItem('conteudo')
+//localStorage.removeItem('localConteudo')
