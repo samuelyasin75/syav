@@ -53,7 +53,9 @@ function salvar() {
             </div>
             `
     localStorage.setItem('localConteudo', JSON.stringify(notaBackup))
-
+    
+    document.getElementById('notaTitulo').value = ''
+    document.getElementById('notaConteudo').value = ''
     }
 }
 
