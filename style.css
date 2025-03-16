@@ -38,6 +38,14 @@ section {
     box-shadow: black 1px 1px 2px;
 }
 
+footer {
+    font-style: italic;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
 h2 {
     text-align: center;
     margin-bottom: 15px;
