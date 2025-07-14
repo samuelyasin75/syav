@@ -35,11 +35,7 @@ section#entry_note {
     margin-bottom:1.5em;
     box-shadow:  1px 1px 4px black;
     border-radius: 3px;
-
-   
 }
-
-
 
 section#entry_note > div {
     margin-bottom: 10px;
@@ -59,7 +55,6 @@ section#entry_note > div {
     box-shadow: 1px 1px 8px black;
 
     text-indent: 16px;
-    text-align: justify;
 }
 
 .notepad > .titulo {

@@ -4,48 +4,36 @@ function entrar() {
    conteudo = localStorage.getItem('localConteudo')
    notaBackup = {}
    conteudo = JSON.parse(conteudo)
-   
+   numNota = localStorage.getItem('numeroNota')
+   numNota = JSON.parse(numNota)
+
    // fazendo backup e exibindo as notas antigas
    if (conteudo) {
        notaBackup = conteudo
 
-       for (let title_obj in conteudo) {
-        notaExb.innerHTML += conteudo[title_obj]
+       for (let nota in conteudo) {
+        notaExb.innerHTML += conteudo[nota]
         }
     }
 }
 
-function salvar() {
+function salvarNota() {
     let notaTitulo = document.getElementById('notaTitulo').value
     let notaConteudo = document.getElementById('notaConteudo').value
+    let tempBackup = ''
 
         //Verficando se há algum valor nas caixas de entrada
     if (notaConteudo == '' || notaTitulo == '') {
-        alert('[ERRO] Nenhum campo pode ficar vazio')
+        alert('[ERRO] Nenhum campo deve estar vazio')
     } else {
         
-        //Colocando as notas em exibição
-        notaExb.innerHTML +=  `
-            <div class='notepad'>
-                <div class='titulo'>
-                    ${notaTitulo}
-                    <div class="button">
-                    <button id='${notaTitulo}'>Excluir</button>
-                    </div>
-                </div>
-                <div class='cntd'>
-                    ${notaConteudo}
-                </div>
-            </div>
-            `
-
         // Salvando no local.Storage
-        notaBackup[notaTitulo] = `
+        tempBackup = `
             <div class='notepad'>
                 <div class='titulo'>
                     ${notaTitulo}
                     <div class="button">
-                    <button id='${notaTitulo}'>Excluir</button>
+                    <button id='${numNota}'>Excluir</button>
                     </div>
                 </div>
                 <div class='cntd'>
@@ -53,13 +41,21 @@ function salvar() {
                 </div>
             </div>
             `
-    localStorage.setItem('localConteudo', JSON.stringify(notaBackup))
 
+        //Colocando as notas em exibição
+        notaExb.innerHTML +=  tempBackup
+
+        notaBackup[numNota] = tempBackup
+        numNota++
+        localStorage.setItem('numeroNota', JSON.stringify(numNota))
+        localStorage.setItem('localConteudo', JSON.stringify(notaBackup))
+        limparCampos()
+        
     }
 }
 
 // Limpando os campos de titulo e anotação
-function limpar() {
+function limparCampos() {
     let titulo = document.getElementById('notaTitulo')
     let nota = document.getElementById('notaConteudo')
     

@@ -9,14 +9,20 @@
 </head>
 <body  onload="entrar()">
     <header>
-        <h1>Anotações</h1>
+        <a href="../index.html" style="text-decoration: none;
+    color:white;"><h1>SYAV</h1></a> 
+        <div class="nav_links">
+            <div class="linknav">
+                Anotação
+            </div>
+        </div>
     </header>
 
     <!-- Caixa de entrada da nota -->
     <section id="entry_note">
         <div>
             Titulo:
-            <input type="text" id="notaTitulo" style="width:100%;">
+            <input type="text" id="notaTitulo" style="width:100%;" autocomplete="off">
         </div> 
         Anotação:
         <div>
@@ -24,8 +30,8 @@
            
         </div>
         <div>
-            <input type="button" value="Salvar" onclick="salvar()">
-            <input type="button" value="Limpar" onclick="limpar()">
+            <input type="button" value="Salvar" onclick="salvarNota()">
+            <input type="button" value="Limpar" onclick="limparCampos()">
         </div>
     </section>
 
