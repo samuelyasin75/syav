@@ -1,31 +1,5 @@
 @charset "UTF-8";
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
-:root {
-    --cor01: #0A0B0D;
-    --cor02: #3B3C40;
-    --cor03: #73221A;
-    --cor04: #F23535;
-    --cor05: #BFBFBF;
-}
-
-body {
-    background-color: var(--cor05);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* barra de navegação */
-header {
-    background-color: #0A0B0D;
-    color: white;
-    text-align: center;
-    margin-bottom:1rem;
-}
-
 /* Campos de entrada das notas */
 section#entry_note {
     background-color: white;
@@ -33,7 +7,7 @@ section#entry_note {
     margin:auto;
     padding: 1em;
     margin-bottom:1.5em;
-    box-shadow:  1px 1px 4px black;
+    box-shadow:  3px 3px 10px rgba(63, 63, 63, 0.634);
     border-radius: 3px;
 }
 
@@ -44,24 +18,23 @@ section#entry_note > div {
 /* Blocos de notas */
 .notepad {
     display: inline-table;
-    background-color: var(--cor02);
-    color:white;
-    width:43%; 
+    background-color: white;
+    color: black;
+    width: 43%; 
     min-height: 20rem;
-    margin-left: 3%;
-    margin-right:3%;
-    margin-bottom: 30px;
+    margin: 15px 3% 15px 3%;
     border-radius: 3px;
-    box-shadow: 1px 1px 8px black;
+    box-shadow: 3px 3px 10px rgba(94, 94, 94, 0.727);
 
     text-indent: 16px;
 }
 
 .notepad > .titulo {
     width: 100%;
-    background-color:var(--cor03);
+    background-color: var(--corFundoElements);
+    color: rgb(167, 205, 205);
     border-radius: 3px;
-    padding-top: 5px;
+    padding-top: 3px;
     text-align: center;
 }
 

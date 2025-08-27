@@ -6,26 +6,29 @@
 }
 
 :root {
-    --cor01: #0A0B0D;
-    --cor02: #3B3C40;
-    --cor03: #73221A;
-    --cor04: #F23535;
-    --cor05: #BFBFBF;
+    --corFundoBody: #9CCCCB;
+    --corLinkNavbar: #cfeeee;
+    --corTextDest: #0F3332;
+    --corTestEnf: #294D4C;
+    --corFundoElements: #364444;
 }
 
 body {
-    background-color: var(--cor02);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--corFundoBody);
 }
 
 header {
-    background-color: var(--cor01);
-    margin-bottom:1rem;
+    background-color: var(--corFundoElements);
+    margin-bottom: 1rem;
+    padding: 10px;
+    box-shadow: 3px 3px 10px #242d2db9;
 }
 
-header > h1 {
+header > h1, a {
     color: white;
     text-align:center;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 3px rgba(44, 41, 41, 0.663);
 }
 
 
@@ -35,13 +38,13 @@ section {
     width: 90%;
     border-radius: 3px;
     padding: 15px;
-    box-shadow: black 1px 1px 2px;
+    box-shadow: 3px 3px 10px #4a6160ad;
 }
 
 footer {
     font-style: italic;
     text-align: center;
-    color: white;
+    color: var(--corTextDest);
     font-size: 12px;
     margin-top: 12px;
 }
@@ -64,12 +67,13 @@ h2 {
 
 a {
     text-decoration: none;
-    color:var(--cor04);
+    color:var(--corLinkNavbar);
 }
 
 a:hover {
-    color: var(--cor03);
-    background-color: rgb(26, 19, 19);
+    color: #78a5a5;
+    background-color: #333838;
+    text-decoration: underline;
 }
 
 div#msg {
