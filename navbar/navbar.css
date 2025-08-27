@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+:root {
+    --corLinkNavbar: #b3f1f1;
+    --corTextDest: #0F3332;
+    --corTestEnf: #294D4C;
+    --corFundoElements: #364444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--corFundoElements);
+    padding: 10px;
+    box-shadow: 3px 3px 10px #242d2db9;
+}
+
+h1 {
+    text-align:center;
+    text-shadow: 1px 1px 3px rgba(44, 41, 41, 0.463);
+}
+
+h1 > a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    background-color: var(--corFundoElements);
+    padding: 5px;
+}
+
+nav > a {
+    display: inline-block;
+    height: 20px;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav > a:hover {
+    color: var(--corLinkNavbar);
+    background-color: #6a7575;
+    text-decoration: underline;
+    border-radius: 5px;
+}
