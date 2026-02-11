@@ -1,18 +1,24 @@
 @charset "UTF-8";
 
 /* Campos de entrada das notas */
-section#entry_note {
+form {
     background-color: white;
     width:60%;
     margin:auto;
+    margin-top: 15px;
     padding: 1em;
     margin-bottom:1.5em;
     box-shadow:  3px 3px 10px rgba(63, 63, 63, 0.634);
     border-radius: 3px;
 }
 
-section#entry_note > div {
+form > div {
     margin-bottom: 10px;
+}
+
+input#notaTitulo, textarea {
+    width: 97%;
+    padding: 3px;
 }
 
 /* Blocos de notas */

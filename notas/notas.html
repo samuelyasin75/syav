@@ -17,21 +17,21 @@
     </nav>
 
     <!-- Caixa de entrada da nota -->
-    <section id="entry_note">
+    <form id="entry_note">
         <div>
-            Titulo:
-            <input type="text" id="notaTitulo" style="width:100%;" autocomplete="off">
+            <label for="notaTitulo">Título: </label> <br>
+            <input type="text" id="notaTitulo" autocomplete="off">
         </div> 
-        Anotação:
         <div>
-           <textarea name="nota" id="notaConteudo" cols="30" rows="10" style="width:100%;"></textarea>
-           
+            <label for="notaConteudo">Conteúdo: </label> <br>
+        <textarea name="nota" id="notaConteudo" cols="30" rows="10"></textarea>
+        
         </div>
         <div>
             <input type="button" value="Salvar" onclick="salvarNota()">
-            <input type="button" value="Limpar" onclick="limparCampos()">
+            <input type="reset" value="Limpar">
         </div>
-    </section>
+    </form>
 
     <!-- exibição de notas -->
     <div id="notaExb">
