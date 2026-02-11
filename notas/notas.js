@@ -31,10 +31,10 @@ function salvarNota() {
         tempBackup = `
             <div class='notepad'>
                 <div class='titulo'>
-                    ${notaTitulo}
-                    <div class="button">
-                    <button id='${numNota}'>Excluir</button>
-                    </div>
+                    <p>
+                        ${notaTitulo}
+                    </p>
+                     <input type='button' name='${numNota}' id='${numNota}' value='Excluir' class='excluirNota'></input>
                 </div>
                 <div class='cntd'>
                     ${notaConteudo}
@@ -68,7 +68,7 @@ notaExb.addEventListener('click', function(propriedades) {
 
     var nota_atualizada = ''
     var id = propriedades.target.id
-
+    console.log(propriedades)
         //deletando nota do objeto
         delete notaBackup[id]
 

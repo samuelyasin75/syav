@@ -39,17 +39,18 @@ input#notaTitulo, textarea {
     width: 100%;
     background-color: var(--corFundoElements);
     color: rgb(167, 205, 205);
-    border-radius: 3px;
-    padding-top: 3px;
+    border-radius: 3px 3px 0px 0px;
     text-align: center;
+}
+
+.notepad > .titulo > p {
+    display: inline-block;
 }
 
 .notepad > .cntd {
     padding: 10px;
 }
 
-.button {
-    display: inline-table;
-    float: right;
-    padding: 0px 1px 6px 1px;
+.excluirNota {
+    
 }
