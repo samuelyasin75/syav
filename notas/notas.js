@@ -21,37 +21,32 @@ function salvarNota() {
     let notaTitulo = document.getElementById('notaTitulo').value
     let notaConteudo = document.getElementById('notaConteudo').value
     let tempBackup = ''
-
-        //Verficando se há algum valor nas caixas de entrada
-    if (notaConteudo == '' || notaTitulo == '') {
-        alert('[ERRO] Nenhum campo deve estar vazio')
-    } else {
-        
-        // Salvando no local.Storage
-        tempBackup = `
-            <div class='notepad'>
-                <div class='titulo'>
-                    <p>
-                        ${notaTitulo}
-                    </p>
-                     <input type='button' name='${numNota}' id='${numNota}' value='Excluir' class='excluirNota'></input>
-                </div>
-                <div class='cntd'>
-                    ${notaConteudo}
-                </div>
+       
+    // Salvando no local.Storage
+    tempBackup = `
+        <div class='notepad'>
+            <div class='titulo'>
+                <p>
+                    ${notaTitulo}
+                </p>
+                    <input type='button' name='${numNota}' id='${numNota}' value='Excluir' class='excluirNota'></input>
             </div>
-            `
+            <div class='cntd'>
+                ${notaConteudo}
+            </div>
+        </div>
+        `
 
-        //Colocando as notas em exibição
-        notaExb.innerHTML +=  tempBackup
+    //Colocando as notas em exibição
+    notaExb.innerHTML +=  tempBackup
 
-        notaBackup[numNota] = tempBackup
-        numNota++
-        localStorage.setItem('numeroNota', JSON.stringify(numNota))
-        localStorage.setItem('localConteudo', JSON.stringify(notaBackup))
-        limparCampos()
+    notaBackup[numNota] = tempBackup
+    numNota++
+    localStorage.setItem('numeroNota', JSON.stringify(numNota))
+    localStorage.setItem('localConteudo', JSON.stringify(notaBackup))
+    limparCampos()
         
-    }
+    
 }
 
 // Limpando os campos de titulo e anotação
