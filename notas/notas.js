@@ -89,3 +89,4 @@ notaExb.addEventListener('click', function(propriedades) {
 
 //removendo/excluindo
 //localStorage.removeItem('localConteudo')
+//localStorage.removeItem('localConteudo')
