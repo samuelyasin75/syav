@@ -23,7 +23,7 @@ input#notaTitulo, textarea {
 
 /* Blocos de notas */
 .notepad {
-    display: inline-block;
+    display: inline-table;
     background-color: white;
     color: black;
     width: 43%; 
